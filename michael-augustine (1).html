@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Augustine & Associates | Premier Consultancy Firm</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sl-green: #1a6b3a;
+    --sl-green-light: #27a558;
+    --sl-green-dark: #0d3d20;
+    --sl-blue: #0a3161;
+    --sl-blue-light: #1855a3;
+    --sl-blue-mid: #1a4d8f;
+    --sl-white: #f8f6f0;
+    --sl-gold: #c9a227;
+    --sl-gold-light: #e8c84a;
+    --sl-cream: #faf7f0;
+    --sl-dark: #0c1a0e;
+    --sl-gray: #6b7280;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--sl-cream);
+    color: var(--sl-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5%;
+    background: rgba(10, 49, 97, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,162,39,.3);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--sl-white);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--sl-gold); }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248,246,240,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--sl-gold); }
+
+  .nav-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sl-dark);
+    background: var(--sl-gold);
+    padding: 0.6rem 1.5rem;
+    border: none; cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--sl-gold-light); transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+    background: var(--sl-blue);
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 50%, rgba(26,107,58,0.35) 0%, transparent 65%),
+      radial-gradient(ellipse at 10% 80%, rgba(201,162,39,0.12) 0%, transparent 50%),
+      linear-gradient(135deg, #0a3161 0%, #0d1f40 50%, #0d3d20 100%);
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,.5) 39px, rgba(255,255,255,.5) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.5) 39px, rgba(255,255,255,.5) 40px);
+  }
+
+  .hero-stripe {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 8px;
+    background: linear-gradient(90deg, var(--sl-green) 33.33%, var(--sl-white) 33.33%, var(--sl-white) 66.66%, var(--sl-blue-light) 66.66%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 8% 0 8%;
+    max-width: 900px;
+    animation: heroFadeIn 1.2s ease both;
+  }
+
+  @keyframes heroFadeIn {
+    from { opacity:0; transform: translateY(40px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sl-gold);
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2rem;
+    animation: heroFadeIn 1s 0.2s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block; width: 50px; height: 1px;
+    background: var(--sl-gold);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--sl-white);
+    margin-bottom: 1rem;
+    animation: heroFadeIn 1s 0.4s ease both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--sl-gold);
+  }
+
+  .hero-title .accent-line {
+    display: block;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(248,246,240,0.6);
+    font-size: 0.6em;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(248,246,240,0.75);
+    max-width: 520px;
+    margin-bottom: 3rem;
+    animation: heroFadeIn 1s 0.6s ease both;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1.5rem; align-items: center;
+    animation: heroFadeIn 1s 0.8s ease both;
+  }
+
+  .btn-primary {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--sl-dark);
+    background: var(--sl-gold);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border: 2px solid var(--sl-gold);
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--sl-gold);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--sl-white);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.8rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .btn-secondary::after {
+    content: '→';
+    font-size: 1rem;
+    transition: transform 0.3s;
+  }
+
+  .btn-secondary:hover { border-color: var(--sl-white); }
+  .btn-secondary:hover::after { transform: translateX(5px); }
+
+  .hero-stats {
+    position: absolute; right: 8%; bottom: 15%;
+    display: flex; flex-direction: column; gap: 2rem;
+    animation: heroFadeIn 1s 1s ease both;
+  }
+
+  .stat-item {
+    text-align: right;
+    border-right: 2px solid var(--sl-gold);
+    padding-right: 1.5rem;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; font-weight: 900;
+    color: var(--sl-white);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(248,246,240,0.5);
+    margin-top: 0.2rem;
+  }
+
+  /* ─── MARQUEE ─── */
+  .marquee-section {
+    background: var(--sl-green);
+    padding: 1rem 0;
+    overflow: hidden;
+  }
+
+  .marquee-track {
+    display: flex; gap: 3rem;
+    animation: marquee 25s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .marquee-item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(248,246,240,0.85);
+    display: flex; align-items: center; gap: 2rem;
+    flex-shrink: 0;
+  }
+
+  .marquee-item::after { content: '◆'; color: var(--sl-gold); font-size: 0.5rem; }
+
+  /* ─── ABOUT ─── */
+  .section { padding: 7rem 8%; }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--sl-green);
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-label::after {
+    content: ''; flex: 1; max-width: 60px; height: 1px;
+    background: var(--sl-green);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+    color: var(--sl-blue);
+  }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center;
+  }
+
+  .about-text p {
+    font-size: 1.2rem; font-weight: 300; line-height: 1.9;
+    color: #2d3748; margin-bottom: 1.5rem;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img-box {
+    width: 100%; aspect-ratio: 3/4;
+    background: linear-gradient(145deg, var(--sl-blue), var(--sl-blue-mid), var(--sl-green-dark));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-img-box::before {
+    content: 'MA';
+    font-family: 'Playfair Display', serif;
+    font-size: 12rem; font-weight: 900; font-style: italic;
+    color: rgba(255,255,255,0.06);
+    position: absolute; bottom: -2rem; right: -1rem;
+    line-height: 1;
+  }
+
+  .about-img-inner {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 2.5rem;
+  }
+
+  .about-name-card {
+    background: var(--sl-gold);
+    padding: 1.5rem 2rem;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+  }
+
+  .about-name-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--sl-dark);
+  }
+
+  .about-name-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(12,26,14,0.7);
+    margin-top: 0.3rem;
+  }
+
+  .about-accent {
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 120px; height: 120px;
+    border: 3px solid var(--sl-gold);
+  }
+
+  .about-accent2 {
+    position: absolute;
+    bottom: -15px; left: -15px;
+    width: 80px; height: 80px;
+    background: var(--sl-green);
+    opacity: 0.6;
+  }
+
+  /* ─── SERVICES ─── */
+  .services-section {
+    background: var(--sl-blue);
+    padding: 7rem 8%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services-section::before {
+    content: 'SERVICES';
+    position: absolute; right: -2%; top: 30%;
+    font-family: 'Playfair Display', serif;
+    font-size: 12rem; font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: -0.05em;
+    pointer-events: none;
+  }
+
+  .services-section .section-label { color: var(--sl-gold); }
+  .services-section .section-label::after { background: var(--sl-gold); }
+  .services-section .section-title { color: var(--sl-white); }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    margin-top: 4rem;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s, transform 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover {
+    background: rgba(255,255,255,0.09);
+    transform: translateY(-4px);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--sl-gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; font-weight: 900; font-style: italic;
+    color: rgba(201,162,39,0.2);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .service-icon {
+    font-size: 2.5rem; margin-bottom: 1.5rem;
+  }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--sl-white);
+    margin-bottom: 1rem;
+  }
+
+  .service-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 300; line-height: 1.8;
+    color: rgba(248,246,240,0.65);
+  }
+
+  /* ─── EXPERTISE ─── */
+  .expertise-section { padding: 7rem 8%; background: var(--sl-cream); }
+
+  .expertise-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 4rem;
+  }
+
+  .expertise-item {
+    padding: 2.5rem 3rem;
+    border: 1px solid rgba(10,49,97,0.12);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s;
+    background: white;
+  }
+
+  .expertise-item::after {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--sl-green), var(--sl-blue));
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 0.4s;
+  }
+
+  .expertise-item:hover::after { transform: scaleY(1); }
+  .expertise-item:hover { transform: translateX(6px); border-color: transparent; box-shadow: 0 8px 40px rgba(10,49,97,0.12); }
+
+  .expertise-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--sl-blue);
+    margin-bottom: 0.8rem;
+  }
+
+  .expertise-item p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 300; line-height: 1.75;
+    color: #4a5568;
+  }
+
+  .expertise-tag {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--sl-green);
+    background: rgba(26,107,58,0.08);
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+
+
+  /* ─── TESTIMONIALS ─── */
+  .testi-section { padding: 7rem 8%; background: white; }
+
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;
+  }
+
+  .testi-card {
+    padding: 2.5rem;
+    border-top: 3px solid transparent;
+    background: var(--sl-cream);
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .testi-card:nth-child(1) { border-top-color: var(--sl-green); }
+  .testi-card:nth-child(2) { border-top-color: var(--sl-gold); }
+  .testi-card:nth-child(3) { border-top-color: var(--sl-blue); }
+
+  .testi-card:hover { box-shadow: 0 15px 50px rgba(10,49,97,0.1); transform: translateY(-4px); }
+
+  .testi-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; font-weight: 900;
+    line-height: 1;
+    color: var(--sl-gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  .testi-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 400; line-height: 1.75;
+    color: #2d3748;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .testi-author {
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .testi-avatar {
+    width: 45px; height: 45px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700; color: white;
+  }
+
+  .testi-card:nth-child(1) .testi-avatar { background: var(--sl-green); }
+  .testi-card:nth-child(2) .testi-avatar { background: var(--sl-gold); color: var(--sl-dark); }
+  .testi-card:nth-child(3) .testi-avatar { background: var(--sl-blue); }
+
+  .testi-info strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--sl-blue);
+    display: block;
+  }
+
+  .testi-info span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem; font-weight: 400; letter-spacing: 0.05em;
+    color: var(--sl-gray);
+  }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    padding: 8rem 8%;
+    background: var(--sl-gold);
+    position: relative; overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent, transparent 20px,
+      rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 21px
+    );
+  }
+
+  .cta-inner {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .cta-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900; line-height: 1.1;
+    color: var(--sl-dark);
+  }
+
+  .cta-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 300; line-height: 1.7;
+    color: rgba(12,26,14,0.7);
+    margin-top: 1rem; max-width: 480px;
+  }
+
+  .btn-dark {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--sl-white);
+    background: var(--sl-blue);
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 2px solid var(--sl-blue);
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+
+  .btn-dark:hover { background: transparent; color: var(--sl-blue); }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    padding: 7rem 8%;
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem;
+    background: var(--sl-dark);
+  }
+
+  .contact-info .section-label { color: var(--sl-gold); }
+  .contact-info .section-label::after { background: var(--sl-gold); }
+  .contact-info .section-title { color: var(--sl-white); }
+
+  .contact-details {
+    margin-top: 3rem;
+    display: flex; flex-direction: column; gap: 2rem;
+  }
+
+  .contact-item {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: rgba(201,162,39,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+    border: 1px solid rgba(201,162,39,0.3);
+  }
+
+  .contact-item strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--sl-gold);
+    display: block; margin-bottom: 0.3rem;
+  }
+
+  .contact-item span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 300;
+    color: rgba(248,246,240,0.7);
+  }
+
+  .contact-form { align-self: start; }
+
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 700;
+    color: var(--sl-white);
+    margin-bottom: 2rem;
+  }
+
+  .form-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;
+  }
+
+  .form-group {
+    display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(248,246,240,0.5);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 0.9rem 1.2rem;
+    color: var(--sl-white);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--sl-gold);
+  }
+
+  .form-group select { appearance: none; cursor: pointer; }
+  .form-group select option { background: var(--sl-dark); }
+
+  .btn-submit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--sl-dark);
+    background: var(--sl-gold);
+    padding: 1rem 2.5rem;
+    border: none; cursor: pointer; width: 100%;
+    border: 2px solid var(--sl-gold);
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit:hover { background: transparent; color: var(--sl-gold); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080f09;
+    padding: 4rem 8% 2rem;
+  }
+
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 900;
+    color: var(--sl-white);
+  }
+
+  .footer-brand .logo span { color: var(--sl-gold); }
+
+  .footer-brand p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 300; line-height: 1.7;
+    color: rgba(248,246,240,0.45);
+    margin-top: 1rem; max-width: 280px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sl-gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+
+  .footer-col a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 300;
+    color: rgba(248,246,240,0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-col a:hover { color: var(--sl-white); }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 2rem;
+  }
+
+  .footer-bottom p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem; font-weight: 400; letter-spacing: 0.08em;
+    color: rgba(248,246,240,0.3);
+  }
+
+  .footer-flag {
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .flag-mini {
+    display: flex; height: 12px; overflow: hidden; border-radius: 1px;
+  }
+
+  .flag-mini div { width: 14px; }
+  .flag-mini .fg { background: var(--sl-green); }
+  .flag-mini .fw { background: white; }
+  .flag-mini .fb { background: var(--sl-blue-light); }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1; transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+  .reveal-delay-4 { transition-delay: 0.6s; }
+
+  /* ─── IAS 7 ─── */
+  .ias7-section {
+    background: linear-gradient(170deg, #0c1a0e 0%, #0a3161 60%, #0d1f40 100%);
+    padding: 7rem 8%;
+    position: relative; overflow: hidden;
+  }
+
+  .ias7-section::before {
+    content: 'IAS 7';
+    position: absolute; right: -2%; top: 5%;
+    font-family: 'Playfair Display', serif;
+    font-size: 14rem; font-weight: 900; font-style: italic;
+    color: rgba(255,255,255,0.03);
+    pointer-events: none; line-height: 1;
+  }
+
+  .ias7-header { max-width: 700px; margin-bottom: 2.5rem; }
+
+  .ias7-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 300; line-height: 1.75;
+    color: rgba(248,246,240,0.6);
+    margin-top: 1rem;
+  }
+
+  .ias7-standard-badge {
+    display: inline-flex; align-items: center; gap: 1.2rem;
+    background: rgba(201,162,39,0.1);
+    border: 1px solid rgba(201,162,39,0.35);
+    padding: 1rem 1.8rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .badge-icon { font-size: 1.8rem; }
+
+  .badge-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--sl-white);
+  }
+
+  .badge-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem; font-weight: 500; letter-spacing: 0.08em;
+    color: rgba(201,162,39,0.75);
+    margin-top: 0.3rem;
+  }
+
+  .ias7-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .ias7-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    padding: 2.5rem;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .ias7-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-3px);
+  }
+
+  .ias7-full { grid-column: 1 / -1; }
+
+  .ias7-activities { grid-column: 1 / -1; padding: 2.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); }
+
+  .ias7-highlight {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(26,107,58,0.3), rgba(10,49,97,0.5));
+    border: 1px solid rgba(201,162,39,0.25);
+  }
+
+  .ias7-card-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sl-green-light);
+    margin-bottom: 0.8rem;
+  }
+
+  .ias7-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--sl-white);
+    margin-bottom: 1rem; line-height: 1.2;
+  }
+
+  .ias7-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 300; line-height: 1.85;
+    color: rgba(248,246,240,0.7);
+  }
+
+  .ias7-card strong { color: var(--sl-gold-light); font-weight: 600; }
+  .ias7-card em { color: rgba(248,246,240,0.9); font-style: italic; }
+
+  .activity-card {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 1.8rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid transparent;
+    background: rgba(0,0,0,0.2);
+    transition: background 0.3s;
+  }
+
+  .activity-card:hover { background: rgba(0,0,0,0.35); }
+  .activity-card:last-child { margin-bottom: 0; }
+
+  .activity-operating { border-left-color: var(--sl-green-light); }
+  .activity-investing  { border-left-color: var(--sl-gold); }
+  .activity-financing  { border-left-color: var(--sl-blue-light); }
+
+  .activity-icon { font-size: 2rem; flex-shrink: 0; margin-top: 0.2rem; }
+
+  .activity-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--sl-white);
+    margin-bottom: 0.6rem;
+  }
+
+  .activity-body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 300; line-height: 1.8;
+    color: rgba(248,246,240,0.65);
+    margin-bottom: 1rem;
+  }
+
+  .activity-body strong { color: var(--sl-gold-light); font-weight: 600; }
+
+  .activity-examples {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  .activity-examples span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem; font-weight: 500; letter-spacing: 0.08em;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(248,246,240,0.6);
+    padding: 0.3rem 0.8rem;
+  }
+
+  .insight-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-style: italic; font-weight: 700;
+    color: var(--sl-gold);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201,162,39,0.25);
+  }
+
+  @media (max-width: 768px) {
+    .ias7-grid { grid-template-columns: 1fr; }
+    .ias7-full, .ias7-activities, .ias7-highlight { grid-column: 1; }
+    .about-grid, .expertise-grid, .services-grid, .testi-grid,
+    .contact-section, .footer-top { grid-template-columns: 1fr; }
+    .hero-stats { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Michael <span>Augustine</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ias7">IAS 7</a></li>
+    <li><a href="#books">Publications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-stripe"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Sierra Leone's Premier Consultancy</div>
+    <h1 class="hero-title">
+      Michael <em>Augustine</em>
+      <span class="accent-line">& Associates</span>
+    </h1>
+    <p class="hero-sub">
+      Empowering businesses, governments, and individuals across West Africa with
+      strategic insight, transformative leadership, and world-class advisory services.
+    </p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#about" class="btn-secondary">Learn More</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">350+</div>
+      <div class="stat-label">Clients Served</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">14</div>
+      <div class="stat-label">African Nations</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Business Strategy</span>
+    <span class="marquee-item">Corporate Governance</span>
+    <span class="marquee-item">Investment Advisory</span>
+    <span class="marquee-item">Leadership Development</span>
+    <span class="marquee-item">Policy Consulting</span>
+    <span class="marquee-item">Market Entry Strategy</span>
+    <span class="marquee-item">Financial Planning</span>
+    <span class="marquee-item">Organizational Transformation</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">Business Strategy</span>
+    <span class="marquee-item">Corporate Governance</span>
+    <span class="marquee-item">Investment Advisory</span>
+    <span class="marquee-item">Leadership Development</span>
+    <span class="marquee-item">Policy Consulting</span>
+    <span class="marquee-item">Market Entry Strategy</span>
+    <span class="marquee-item">Financial Planning</span>
+    <span class="marquee-item">Organizational Transformation</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-label reveal">About the Firm</div>
+      <h2 class="section-title reveal reveal-delay-1">A Legacy of Excellence in African Business</h2>
+      <p class="reveal reveal-delay-2">
+        Michael Augustine & Associates is a distinguished consultancy firm headquartered in Bo, Sierra Leone. For over two decades, we have been the trusted partner of corporations, government ministries, NGOs, and entrepreneurs seeking to navigate the complexities of the African marketplace.
+      </p>
+      <p class="reveal reveal-delay-3">
+        Our founder, Michael Augustine, holds a <strong>BSc (Hons) First Class in Accounting</strong> and an <strong>MBA in Finance</strong>, bringing a wealth of international experience combined with deep regional knowledge — offering clients a rare blend of global best practices and cultural intelligence that drives real, measurable results.
+      </p>
+      <div class="reveal reveal-delay-4" style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+        <div style="background:var(--sl-blue);color:white;padding:0.8rem 1.4rem;font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-left:4px solid var(--sl-gold);line-height:1.6;">
+          BSc (Hons) Accounting<br><span style="color:var(--sl-gold);font-size:0.58rem;font-weight:500;">First Class Honours</span>
+        </div>
+        <div style="background:var(--sl-green-dark);color:white;padding:0.8rem 1.4rem;font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-left:4px solid var(--sl-gold);line-height:1.6;">
+          MBA Finance<br><span style="color:var(--sl-gold);font-size:0.58rem;font-weight:500;">Master of Business Administration</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal reveal-delay-2">
+      <div class="about-accent"></div>
+      <div class="about-accent2"></div>
+      <div class="about-img-box">
+        <div class="about-img-inner">
+          <div class="about-name-card">
+            <h3>Michael Augustine</h3>
+            <p>Founder & Principal Consultant</p>
+            <p style="margin-top:0.4rem;font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.08em;color:rgba(12,26,14,0.65);">BSc (Hons) Accounting — First Class &nbsp;|&nbsp; MBA Finance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-label reveal">What We Do</div>
+  <h2 class="section-title reveal reveal-delay-1">Comprehensive Consultancy Services</h2>
+
+  <div class="services-grid">
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-num">01</div>
+      <div class="service-icon">📊</div>
+      <h3 class="service-title">Business Strategy & Development</h3>
+      <p class="service-desc">We craft bespoke strategic roadmaps that align your vision with market realities, from startup acceleration to enterprise transformation and competitive repositioning.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-num">02</div>
+      <div class="service-icon">🏛</div>
+      <h3 class="service-title">Corporate Governance & Compliance</h3>
+      <p class="service-desc">Robust governance frameworks, board advisory, and regulatory compliance solutions designed to protect your organization and build lasting stakeholder trust.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-num">03</div>
+      <div class="service-icon">💼</div>
+      <h3 class="service-title">Investment & Financial Advisory</h3>
+      <p class="service-desc">Expert guidance on capital structure, investment opportunities, mergers & acquisitions, and financial risk management across West African markets.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-num">04</div>
+      <div class="service-icon">🌍</div>
+      <h3 class="service-title">Policy & Government Relations</h3>
+      <p class="service-desc">Strategic advisory for government agencies and institutions navigating policy reform, public-private partnerships, and international development initiatives.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-num">05</div>
+      <div class="service-icon">🎯</div>
+      <h3 class="service-title">Leadership & Executive Development</h3>
+      <p class="service-desc">Transformative coaching and development programmes for C-suite executives, boards, and high-potential leaders building tomorrow's African enterprises.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-num">06</div>
+      <div class="service-icon">🔍</div>
+      <h3 class="service-title">Market Research & Intelligence</h3>
+      <p class="service-desc">In-depth market analysis, consumer insights, and competitive intelligence that give your organization the knowledge edge in dynamic African markets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise-section">
+  <div class="section-label reveal">Deep Expertise</div>
+  <h2 class="section-title reveal reveal-delay-1">Industries We Serve</h2>
+
+  <div class="expertise-grid">
+    <div class="expertise-item reveal reveal-delay-1">
+      <div class="expertise-tag">Sector Focus</div>
+      <h3>Financial Services & Banking</h3>
+      <p>Deep expertise supporting commercial banks, microfinance institutions, and fintech companies in regulatory navigation, growth strategy, and digital transformation.</p>
+    </div>
+    <div class="expertise-item reveal reveal-delay-2">
+      <div class="expertise-tag">Sector Focus</div>
+      <h3>Mining & Natural Resources</h3>
+      <p>Strategic advisory for mining companies and extractive industries on stakeholder engagement, community development, and sustainable operations in Sierra Leone and beyond.</p>
+    </div>
+    <div class="expertise-item reveal reveal-delay-3">
+      <div class="expertise-tag">Sector Focus</div>
+      <h3>Agriculture & Agribusiness</h3>
+      <p>Transforming agricultural value chains through strategic investment, supply chain optimization, and market linkage development across the West African region.</p>
+    </div>
+    <div class="expertise-item reveal reveal-delay-4">
+      <div class="expertise-tag">Sector Focus</div>
+      <h3>Infrastructure & Real Estate</h3>
+      <p>Advisory services for large-scale infrastructure projects, public-private partnerships, and real estate development that reshape communities and drive economic growth.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- IAS 7 SECTION -->
+<section class="ias7-section" id="ias7">
+  <div class="ias7-header">
+    <div class="section-label reveal" style="color:var(--sl-gold-light);">Accounting Insight</div>
+    <h2 class="section-title reveal reveal-delay-1" style="color:var(--sl-white);">IAS 7 — Statement of Cash Flows</h2>
+    <p class="ias7-intro reveal reveal-delay-2">An authoritative breakdown of one of the most critical International Accounting Standards, as applied in practice by our advisory team.</p>
+  </div>
+
+  <div class="ias7-standard-badge reveal reveal-delay-1">
+    <div class="badge-icon">📋</div>
+    <div>
+      <div class="badge-title">International Accounting Standard 7</div>
+      <div class="badge-sub">Issued by the IASB &nbsp;·&nbsp; Effective since 1 January 1994 &nbsp;·&nbsp; Adopted under IFRS</div>
+    </div>
+  </div>
+
+  <div class="ias7-grid">
+
+    <div class="ias7-card ias7-full reveal">
+      <div class="ias7-card-label">Overview</div>
+      <h3 class="ias7-card-title">What is IAS 7?</h3>
+      <p>IAS 7 — <em>Statement of Cash Flows</em> — is the International Accounting Standard that prescribes how entities must report information about historical changes in cash and cash equivalents. It requires companies to present a cash flow statement as a mandatory component of their complete set of financial statements. The standard ensures that financial statement users can evaluate the ability of an entity to generate cash and the way it uses those cash flows.</p>
+      <p style="margin-top:1rem;">Under IAS 7, <strong>cash</strong> encompasses cash on hand and demand deposits, while <strong>cash equivalents</strong> are short-term, highly liquid investments readily convertible to known amounts of cash, with insignificant risk of change in value — typically with a maturity of three months or less.</p>
+    </div>
+
+    <div class="ias7-card reveal reveal-delay-1">
+      <div class="ias7-card-label">Objective</div>
+      <h3 class="ias7-card-title">Core Purpose</h3>
+      <p>The primary objective of IAS 7 is to require the presentation of information about an entity's historical changes in cash and cash equivalents by means of a cash flow statement. This classifies cash flows during the period according to <strong>operating, investing, and financing activities</strong>, enabling stakeholders to assess the entity's liquidity, solvency, and financial flexibility.</p>
+    </div>
+
+    <div class="ias7-card reveal reveal-delay-2">
+      <div class="ias7-card-label">Scope</div>
+      <h3 class="ias7-card-title">Who Does It Apply To?</h3>
+      <p>IAS 7 applies to <strong>all entities</strong> that prepare financial statements in conformity with International Financial Reporting Standards (IFRS). It is applicable regardless of an entity's nature, industry, or size — covering banks, insurance companies, manufacturing firms, governments, and non-profit organisations alike.</p>
+    </div>
+
+    <div class="ias7-activities reveal reveal-delay-1">
+      <div class="ias7-card-label" style="color:var(--sl-gold);margin-bottom:1.5rem;">The Three Core Activities</div>
+
+      <div class="activity-card activity-operating">
+        <div class="activity-icon">⚙️</div>
+        <div class="activity-body">
+          <h4>Operating Activities</h4>
+          <p>Cash flows from the principal revenue-producing activities of the entity. These represent transactions that enter into the determination of profit or loss and include cash received from customers, cash paid to suppliers and employees, income taxes paid, and interest paid. Operating cash flows can be reported using the <strong>direct method</strong> (recommended) or the <strong>indirect method</strong> (widely used in practice).</p>
+          <div class="activity-examples">
+            <span>Cash receipts from sales</span>
+            <span>Payments to suppliers</span>
+            <span>Employee wages paid</span>
+            <span>Tax payments</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card activity-investing">
+        <div class="activity-icon">📈</div>
+        <div class="activity-body">
+          <h4>Investing Activities</h4>
+          <p>Cash flows related to the acquisition and disposal of long-term assets and other investments not included in cash equivalents. These reflect expenditures made for resources intended to generate future income and cash flows, helping users understand how the entity deploys capital to generate earnings over the long term.</p>
+          <div class="activity-examples">
+            <span>Purchase of property &amp; equipment</span>
+            <span>Proceeds from asset sales</span>
+            <span>Acquisition of subsidiaries</span>
+            <span>Loans made to other parties</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card activity-financing">
+        <div class="activity-icon">🏦</div>
+        <div class="activity-body">
+          <h4>Financing Activities</h4>
+          <p>Cash flows that result in changes in the size and composition of the contributed equity and borrowings of the entity. These flows enable users to predict claims on future cash flows by providers of capital — both debt and equity holders — and assess the entity's capital structure strategy.</p>
+          <div class="activity-examples">
+            <span>Proceeds from share issuance</span>
+            <span>Dividends paid</span>
+            <span>Borrowings raised</span>
+            <span>Repayment of loans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ias7-card reveal reveal-delay-1">
+      <div class="ias7-card-label">Key Requirements</div>
+      <h3 class="ias7-card-title">Presentation &amp; Disclosures</h3>
+      <p>Entities must disclose components of cash and cash equivalents and reconcile amounts in the cash flow statement with equivalent items in the balance sheet. IAS 7 also requires disclosure of significant non-cash transactions — such as acquisition of assets by assuming liabilities — and allows for certain cash flows like interest received and dividends to be classified under different activity headings, with consistency applied period to period.</p>
+    </div>
+
+    <div class="ias7-card reveal reveal-delay-2">
+      <div class="ias7-card-label">Methods</div>
+      <h3 class="ias7-card-title">Direct vs Indirect Method</h3>
+      <p>Under the <strong>direct method</strong>, major classes of gross cash receipts and gross cash payments are disclosed — providing more useful information but requiring additional data collection. Under the <strong>indirect method</strong>, net profit is adjusted for non-cash items (depreciation, amortisation) and changes in working capital. While IAS 7 <em>encourages</em> the direct method, the indirect method is predominant globally due to its practical simplicity.</p>
+    </div>
+
+    <div class="ias7-card ias7-highlight reveal">
+      <div class="ias7-card-label" style="color:var(--sl-gold);">Expert Insight</div>
+      <h3 class="ias7-card-title" style="color:var(--sl-white);">Why IAS 7 Matters in Business</h3>
+      <p style="color:rgba(248,246,240,0.8);">From our consultancy experience, cash flow analysis under IAS 7 is often the most revealing diagnostic tool in financial due diligence. A company can report strong profits while haemorrhaging cash — known as the "profit illusion." The IAS 7 statement strips away accounting estimates, accruals, and non-cash entries to show the raw financial heartbeat of a business.</p>
+      <p style="color:rgba(248,246,240,0.8);margin-top:1rem;">At Michael Augustine &amp; Associates, we apply IAS 7 frameworks in our investment advisory and corporate governance engagements to assess true liquidity, stress-test business models, and advise boards on sustainable cash management strategies across West African markets.</p>
+      <div class="insight-quote">"Cash is fact. Profit is opinion."</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="section-label reveal">Client Voices</div>
+  <h2 class="section-title reveal reveal-delay-1">What Our Clients Say</h2>
+
+  <div class="testi-grid">
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-quote">&ldquo;</div>
+      <p class="testi-text">Michael Augustine's strategic guidance transformed our expansion across West Africa. Their insight into local market dynamics is simply unmatched. We grew 40% within 18 months.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AK</div>
+        <div class="testi-info">
+          <strong>Samson Tholley</strong>
+          <span>CEO, Ask Bussnies Consultancy</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-quote">&ldquo;</div>
+      <p class="testi-text">The governance framework they designed for us has become a model across the region. Professional, thorough, and deeply committed to excellence in every engagement.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">FJ</div>
+        <div class="testi-info">
+          <strong>Ahmed El Bahi</strong>
+          <span>Director,Django Informaiton Tech Egypt</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-3">
+      <div class="testi-quote">&ldquo;</div>
+      <p class="testi-text">Their policy advisory work with our ministry produced real legislative change. Augustine brings both intellectual rigor and practical wisdom to every challenge.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SK</div>
+        <div class="testi-info">
+          <strong>Alhaji Magbity</strong>
+          <span>Ceo of sira firms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Schedule a confidential consultation with our team and discover how Michael Augustine & Associates can accelerate your success across Africa.</p>
+    </div>
+    <a href="#contact" class="btn-dark">Book a Consultation</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-info">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Build Something Great Together</h2>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Headquarters</strong>
+          <span>Bo, Sierra Leone</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <strong>Email</strong>
+          <span>augumike2017@gmail.com</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Phone</strong>
+          <span>+232 78054100</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕒</div>
+        <div>
+          <strong>Office Hours</strong>
+          <span>Monday – Friday, 8:00 AM – 6:00 PM (WAT)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h3 class="form-title">Send Us a Message</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="John">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Kamara">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="john@company.com">
+    </div>
+    <div class="form-group">
+      <label>Service Interest</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>Business Strategy & Development</option>
+        <option>Corporate Governance & Compliance</option>
+        <option>Investment & Financial Advisory</option>
+        <option>Policy & Government Relations</option>
+        <option>Leadership & Executive Development</option>
+        <option>Market Research & Intelligence</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Your Message</label>
+      <textarea rows="5" placeholder="Tell us about your project or inquiry..."></textarea>
+    </div>
+    <button class="btn-submit">Send Message →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">Michael <span>Augustine</span></div>
+      <p>Empowering African enterprise through strategic wisdom, integrity, and transformative consulting since 2003.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Business Strategy</a></li>
+        <li><a href="#">Governance</a></li>
+        <li><a href="#">Investment Advisory</a></li>
+        <li><a href="#">Policy Consulting</a></li>
+        <li><a href="#">Leadership Dev.</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About the Firm</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Twitter / X</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Media Inquiries</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Michael Augustine & Associates. All Rights Reserved. | Bo, Sierra Leone</p>
+    <div class="footer-flag">
+      <div class="flag-mini">
+        <div class="fg"></div>
+        <div class="fw"></div>
+        <div class="fb"></div>
+      </div>
+      <span style="font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.1em;color:rgba(255,255,255,0.25);text-transform:uppercase;">Sierra Leone</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth nav background
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.3)' : 'none';
+  });
+
+  // Form submission
+  document.querySelector('.btn-submit').addEventListener('click', function() {
+    this.textContent = '✓ Message Sent!';
+    this.style.background = 'var(--sl-green)';
+    this.style.borderColor = 'var(--sl-green)';
+    this.style.color = 'white';
+    setTimeout(() => {
+      this.textContent = 'Send Message →';
+      this.style.background = '';
+      this.style.borderColor = '';
+      this.style.color = '';
+    }, 3000);
+  });
+</script>
+</body>
+</html>
